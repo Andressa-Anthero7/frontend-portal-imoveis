@@ -1,0 +1,276 @@
+
+<!DOCTYPE html>
+
+
+
+<html>
+<head>
+
+
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Realize</title>
+
+	
+
+
+	<!-- Jquery CDN -->
+	 <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+	<!-- Boostrap 4 CDN  -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+	<!-- FontAwesome CDN -->
+	<script src="https://kit.fontawesome.com/a69cec9c91.js" crossorigin="anonymous"></script>
+     <link rel="stylesheet" href="fontawesome/css/all.css">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet" />
+
+
+
+
+	<!-- CSS -->
+	 <link rel="stylesheet" type="text/css" href="estilo.css">
+
+
+	<!-- Java Script -->
+	 <script type="text/javascript" src="scripts.js"></script>
+
+</head>
+
+<!-- Corpo do HTML -->
+<body lang="pt-br" >
+
+
+
+
+	<!-- Container -->
+	<div class=" container container-fluid ">
+
+
+		<!-- Header da Pagina -->
+		<header id="header" class="bg-white  row ">
+			<!-- Imagem da Logo -->
+			<img src="logo-marca.png" id="img-logo"  alt="Realize Seu Imóvel">
+			
+				
+			
+		</header>
+
+		<!--BARRA DE PESQUISA -->
+		<div id="pesquisa" class="p-4" >
+
+				<form method="GET"  id="form-pesquisa"  class=" text-center form-inline m-0 p-0 ">
+				
+					
+
+					<!--INPUT DA BARRA DE PESQUISA -->
+					<input type="text" name="barra-pesquisa" id="barra-pesquisa" class="form-control  mr-1" placeholder="Pesquisar" value="" >
+					<i class="fa fa-times-circle-o  btn    p-0 mr-3 " id="apagar-pesquisa" aria-hidden="true" style="font-size: 1.5em;"></i>
+					<!--BTN PESQUISAR -->
+					<button type="submit" id="btn-pesquisar" class=" btn btn-primary  ">
+						<i class="fa fa-search"></i>
+					</button>
+
+					<script>
+
+
+
+						$('#barra-pesquisa').focusin(function(){
+							$(this).css({'min-width': '110%'});
+							$('.fa-times-circle-o').hide();
+							$('#btn-pesquisar').hide();
+
+							setTimeout(() => {
+							  	$(this).css({'min-width': '80%'});
+								$('.fa-times-circle-o').show();
+								$('#btn-pesquisar').show();
+							}, "3000");
+
+
+
+
+						});
+
+						$('#barra-pesquisa').focusout(function(){
+							$(this).css({'min-width': '80%'});
+							$('.fa-times-circle-o').show();
+							$('#btn-pesquisar').show();
+						});
+
+
+						$('#barra-pesquisa').keydown(function(){
+							
+
+							$(this).css({'min-width': '110%'});
+							$('.fa-times-circle-o').hide();
+							$('#btn-pesquisar').hide();
+
+
+
+						});
+
+
+
+
+
+
+
+
+
+
+						$('#barra-pesquisa').keyup(function(){
+							setTimeout(() => {
+							  	$(this).css({'min-width': '80%'});
+								$('.fa-times-circle-o').show();
+								$('#btn-pesquisar').show();
+							}, "3000");
+
+							
+
+
+
+						});
+
+
+
+
+
+
+
+
+
+						$(document).on('click','#apagar-pesquisa', function(){
+							$('#barra-pesquisa').val('');
+						});
+
+					</script>
+
+					
+				</form>
+
+
+		</div>
+
+		<!-- DISPLAY IMOVEIS -->
+		<div id="display-imoveis" class="border border-darka rounded row m-2 p-1 text-center ">
+			<!-- HEADER DO DISPLAY -->
+			<div class="col-12"><h3 class="text-center p-2">Destaques</h3></div>
+			<!--DECK DO DISPLAY -->
+			<div class="card-deck">
+			  <div class="card">
+			    <img class="card-img-top" src="..." alt="Card image cap">
+			    <div class="card-body">
+			      <h5 class="card-title">Card title</h5>
+			      <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+			      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+			    </div>
+			  </div>
+			  <div class="card">
+			    <img class="card-img-top" src="..." alt="Card image cap">
+			    <div class="card-body">
+			      <h5 class="card-title">Card title</h5>
+			      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+			      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+			    </div>
+			  </div>
+			  <div class="card">
+			    <img class="card-img-top" src="..." alt="Card image cap">
+			    <div class="card-body">
+			      <h5 class="card-title">Card title</h5>
+			      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+			      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+			    </div>
+			  </div>
+			</div>
+
+			<!-- CARROUSSEL -->
+			<div class="p-3 mt-2">
+				<div id="carousel" class="carousel slide" data-ride="carousel">
+				  <ol class="carousel-indicators">
+				    <li data-target="#carousel" data-slide-to="0" class="active"></li>
+				    <li data-target="#carousel" data-slide-to="1"></li>
+				    <li data-target="#carousel" data-slide-to="2"></li>
+				  </ol>
+				  <div class="carousel-inner">
+				    <div class="carousel-item active">
+				      <img class="d-block w-100" src="..." alt="First slide">
+				    </div>
+				    <div class="carousel-item">
+				      <img class="d-block w-100" src="..." alt="Second slide">
+				    </div>
+				    <div class="carousel-item">
+				      <img class="d-block w-100" src="..." alt="Third slide">
+				    </div>
+				  </div>
+				  <a class="carousel-control-prev" href="#carousel" role="button" data-slide="prev">
+				    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Previous</span>
+				  </a>
+				  <a class="carousel-control-next" href="#carousel" role="button" data-slide="next">
+				    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				    <span class="sr-only">Next</span>
+				  </a>
+				</div>
+				
+			</div>
+
+			
+			
+			
+			
+		</div>
+		<!-- FECHA DISPLAY IMÓVEIS -->
+
+		<!-- SOBRE NÓS -->
+		<div id="sobre" class="p-3 mt-3 text-center">
+			<h4 class="p-1">Sobre a Realize Seu Imóvel</h4>
+			<p>Sabemos o quanto encontrar o imóvel perfeito pode parecer uma tarefa desafiadora. É por isso que estamos aqui para simplificar esse processo e transformar seu sonho em realidade.
+
+			Nossa plataforma imobiliária está pronta para ajudá-lo(a) em todas as etapas do caminho. Vamos transformar  suas necessidades, desejos e preferências, e apresentar o imóvel ideal que atenda a todos os seus critérios.
+
+			Não importa que esteja procurando uma casa espaçosa para sua família, um apartamento aconchegante no coração da cidade ou uma propriedade de luxo para investimento, estamos preparados para encontrar as melhores opções disponíveis.
+			</p>
+		</div>
+
+		<!-- BTN WHATSAPP FLUTUANTE -->
+		<div id="whatsapp-flutuante">
+			<a href="https://wa.me/5516993379492?text=Acabei%20de%20%20ver%20a%20promoção%20Landing%20Page%20por%20R$%20299,90"  class="btn fa fa-whatsapp" id="btn-whatsapp-flutuante"></a>
+
+		</div>
+
+
+
+		<!-- RODAPÉ -->
+		<footer class="text-center my-5" >
+			<i class="fa fa-copyright" aria-hidden="true">Copyright</i>
+			<div>Antherus - Desenvolvimento Web</div>
+			<small><i class="fa fa-whatsapp mr-1" aria-hidden="true"></i><span>(16) 99337-9492</span></small>
+		</footer>
+
+
+
+
+
+
+
+	</div>
+	<!-- FINAL CONTAINER -->
+
+
+
+			
+
+
+
+
+
+
+
+
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
