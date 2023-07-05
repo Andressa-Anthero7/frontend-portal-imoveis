@@ -295,10 +295,7 @@
 
 		            });
 
-		            // Criar um InfoWindow personalizado com o rótulo
-					  var infoWindow = new google.maps.InfoWindow({
-					    content: '<div><strong>' + imovel.rotulo + '</strong><br>' + imovel.descricao + '</div>'
-					  });
+		           
 
 		            // Adicionar um evento de clique a cada marcador para redirecionar para o link correspondente
 		            marker.addListener('click', function(link) {
@@ -307,7 +304,7 @@
 		              };
 		            }(imovel.link));
 
-		            
+
 		          }
 
 
